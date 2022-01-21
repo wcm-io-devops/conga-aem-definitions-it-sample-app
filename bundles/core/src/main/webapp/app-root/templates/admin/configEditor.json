@@ -1,0 +1,13 @@
+{
+  "jcr:primaryType": "cq:Template",
+  "jcr:title": "aemdef-it-sample Configuration Editor",
+  "ranking": 120,
+
+  "allowedPaths": "^/content/aemdef-it-sample(/.+)*/tools(/.+)?$",
+  "allowedChildren": "",
+
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "sling:resourceType": "aemdef-it-sample/core/components/admin/page/configEditor"
+  }
+}

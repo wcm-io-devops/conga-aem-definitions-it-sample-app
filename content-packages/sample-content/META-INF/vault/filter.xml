@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/content/dam/aemdef-it-sample">
+        <!-- Exclude folder thumbnails - they will be generated automatically -->
+        <exclude pattern="^.*/jcr:content/folderThumbnail(/.*)?$"/>
+    </filter>
+    <filter root="/content/aemdef-it-sample"/>
+    <filter root="/content/experience-fragments/aemdef-it-sample"/>
+    <filter root="/conf/aemdef-it-sample">
+        <include pattern="/conf/aemdef-it-sample/.*"/>
+        <exclude pattern="/conf/aemdef-it-sample/rep:policy(/.*)?"/>
+        <exclude pattern="/conf/aemdef-it-sample/settings/wcm(/.*)?"/>
+    </filter>
+</workspaceFilter>

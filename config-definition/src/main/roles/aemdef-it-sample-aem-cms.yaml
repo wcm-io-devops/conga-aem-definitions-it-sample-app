@@ -1,0 +1,109 @@
+# Project-specific AEM configuration
+
+# Inherit default AEM functionality from "AEM Definitions", see http://devops.wcm.io/conga/definitions/aem/
+inherits:
+- role: aem-cms
+
+variants:
+- variant: aem-author
+- variant: aem-publish
+
+templateDir: aemdef-it-sample-aem-cms
+
+files:
+
+
+# AEM Service Pack
+- url: mvn:adobe.binary.aem.65.servicepack/aem-service-pkg/6.5.11/zip
+  dir: packages
+  modelOptions:
+    delayAfterInstallSec: 30
+  condition: ${app.aem65}
+
+# AEM Core WCM components
+- url: mvn:com.adobe.cq/core.wcm.components.all//zip
+  dir: packages
+  condition: ${app.aem65}
+
+# AEM OSGi System Configuration
+- file: aemdef-it-sample-aem-cms-config.provisioning
+  dir: packages
+  template: aemdef-it-sample-aem-cms-config.provisioning.hbs
+  postProcessors:
+  - aem-contentpackage-osgiconfig
+  postProcessorOptions:
+    contentPackage:
+      name: aemdef-it-sample-aem-cms-config
+      rootPath: /apps/aemdef-it-sample/config
+      filters:
+      - filter: /apps/aemdef-it-sample
+        rules:
+        - rule: include
+          pattern: /apps/aemdef-it-sample/config(\..*)?(/.*)?
+        - rule: exclude
+          pattern: /apps/aemdef-it-sample/config/rewriter(/.*)?
+
+# Include URL handler in Sling Rewriter configuration
+- file: aemdef-it-sample-aem-cms-rewriter-config.json
+  dir: packages
+  template: aemdef-it-sample-aem-cms-rewriter-config.json.hbs
+  validatorOptions:
+    contentPackage.validatorsSettings:
+      jackrabbit-filter:
+        options:
+          validRoots: /apps/aemdef-it-sample/config
+  postProcessors:
+  - aem-contentpackage
+  postProcessorOptions:
+    contentPackage:
+      name: aemdef-it-sample-aem-cms-rewriter-config
+      packageType: application
+      rootPath: /apps/aemdef-it-sample/config/rewriter
+
+# wcm.io
+- url: mvn:io.wcm/io.wcm.handler.url//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.handler.link//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.handler.media//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.handler.richtext//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.wcm.core.components//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.wcm.parsys//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.wcm.ui.granite//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.wcm.ui.clientlibs//zip/content
+  dir: packages
+
+# Application package
+- url: mvn:io.wcm.devops.conga.definitions.it/io.wcm.devops.conga.definitions.it.sample.complete//zip
+  dir: packages
+
+# Application conf content package
+- url: mvn:io.wcm.devops.conga.definitions.it/io.wcm.devops.conga.definitions.it.sample.conf-content//zip
+  dir: packages
+  condition: ${app.confContent}
+
+# Application sample content package
+- url: mvn:io.wcm.devops.conga.definitions.it/io.wcm.devops.conga.definitions.it.sample.sample-content//zip
+  dir: packages
+  condition: ${app.sampleContent}
+
+
+# Defines configuration parameters and default values
+config:
+  contentPackage:
+    group: wcmio-devops-it
+    version: ${version}
+
+  app:
+    confContent: true
+    sampleContent: false
+    aem65: false
+
+  # Log levels
+  log:
+    projectSpecificLogLevel: warn

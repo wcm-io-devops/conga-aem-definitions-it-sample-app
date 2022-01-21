@@ -1,0 +1,20 @@
+{
+  "jcr:primaryType": "cq:ClientLibraryFolder",
+  "categories": [
+    "aemdef-it-sample.all"
+  ],
+  "embed": [
+    "core.wcm.components.commons.datalayer.v1",
+    "core.wcm.components.commons.site.container",
+    "core.wcm.components.carousel.v1",
+    "core.wcm.components.tabs.v1",
+    "core.wcm.components.accordion.v1",
+    "aemdef-it-sample.3rdparty",
+    "aemdef-it-sample.app"
+  ],
+  "jsProcessor": [
+    "default:none",
+    "min:gcc;compilationLevel=whitespace"
+  ],
+  "allowProxy": true
+}

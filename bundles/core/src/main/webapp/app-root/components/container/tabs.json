@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Tabs",
+  "componentGroup": "aemdef-it-sample Container",
+  "sling:resourceSuperType": "wcm-io/wcm/core/components/tabs/v1/tabs"
+}

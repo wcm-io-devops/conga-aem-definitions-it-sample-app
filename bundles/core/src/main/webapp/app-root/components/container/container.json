@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Container",
+  "componentGroup": "aemdef-it-sample Container",
+  "sling:resourceSuperType": "wcm-io/wcm/core/components/container/v1/container"
+}

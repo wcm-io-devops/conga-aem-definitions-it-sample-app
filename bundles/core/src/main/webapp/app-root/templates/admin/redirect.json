@@ -1,0 +1,14 @@
+{
+  "jcr:primaryType": "cq:Template",
+  "jcr:title": "aemdef-it-sample Redirect",
+  "ranking": 110,
+
+  "allowedPaths": "^/content/aemdef-it-sample/.+$",
+  "allowedParents": ["^/apps/aemdef-it-sample/core/templates/.*$","^/conf/aemdef-it-sample/settings/wcm/templates/.*$"],
+  "allowedChildren": ["^/apps/aemdef-it-sample/core/templates/.*$","^/conf/aemdef-it-sample/settings/wcm/templates/.*$"],
+
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "sling:resourceType": "aemdef-it-sample/core/components/admin/page/redirect"
+  }
+}

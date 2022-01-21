@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/aemdef-it-sample">
+        <include pattern="/conf/aemdef-it-sample"/>
+        <include pattern="/conf/aemdef-it-sample/rep:policy(/.*)?"/>
+    </filter>
+    <filter root="/conf/aemdef-it-sample/settings/wcm">
+        <exclude pattern="^.*/dam:thumbnails(/.*)?$"/>
+    </filter>
+</workspaceFilter>

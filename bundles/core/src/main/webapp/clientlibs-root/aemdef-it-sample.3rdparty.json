@@ -1,0 +1,7 @@
+{
+  "jcr:primaryType": "cq:ClientLibraryFolder",
+  "categories": [
+    "aemdef-it-sample.3rdparty"
+  ],
+  "allowProxy": true
+}

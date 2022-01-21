@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Form Hidden",
+  "componentGroup": "aemdef-it-sample Form",
+  "sling:resourceSuperType": "wcm-io/wcm/core/components/form/hidden/v2/hidden"
+}
