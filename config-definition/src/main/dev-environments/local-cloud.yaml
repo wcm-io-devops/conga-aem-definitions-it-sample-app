@@ -1,4 +1,4 @@
-# AEM configuration for AEM 6.5 with Dispatcher
+# AEM configuration local AEMaaCS environment with local dispatcher
 
 nodes:
 
@@ -20,16 +20,10 @@ nodes:
 
 - node: aem-dispatcher
   roles:
-  - role: aem-dispatcher
+  - role: aem-dispatcher-cloud
     variant: aem-publish
   config:
     dispatcher:
-      cache:
-        rootPath: /var/cache/publish1
-        statFilesLevel: 2
-      renderInstance:
-        host: localhost
-        port: 4503
       # Allow access to model.json
       filter:
       - _merge_
@@ -43,11 +37,15 @@ config:
   contentPackage.group: wcmio-devops-it
   app:
     # Default log level for application code
-    logLevel: warn
+    logLevel: info
     # Whether to deploy conf content with editable template definitions
     confContent: true
     # Whether to deploy sample content
     sampleContent: true
+
+  quickstart:
+    # Enable Apache Sling DavEx Servlet to be able to use CRXDE Lite
+    enableDavEx: true
 
   # Not used for AEM cloud
   cloudManager.target:
@@ -58,18 +56,17 @@ tenants:
 - tenant: tenant1
   config:
     httpd:
-      serverName: tenant1.aemdef-it-sample-65.dev
+      serverName: tenant1.aemdef-it-sample.localhost
       rootRedirect.url: /en.html
     sling.mapping.rootPath: /content/aemdef-it-sample/tenant1
 - tenant: tenant2
   config:
     httpd:
-      serverName: tenant2.aemdef-it-sample-65.dev
+      serverName: tenant2.aemdef-it-sample.localhost
       rootRedirect.url: /en.html
     sling.mapping.rootPath: /content/aemdef-it-sample/tenant2
 - tenant: tenant3-no-mapping
   config:
     httpd:
-      serverName: tenant3-no-mapping.aemdef-it-sample-65.dev
+      serverName: tenant3-no-mapping.aemdef-it-sample.localhost
       rootRedirect.url: /content/aemdef-it-sample/tenant3-no-mapping/en.html
-

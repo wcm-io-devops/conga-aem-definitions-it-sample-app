@@ -18,9 +18,10 @@
 #  #L%
 
 MAVEN_PROFILES="fast,aem65"
+CONGA_ENVIRONMENT="local-aem65"
 
 if [[ $0 == *":\\"* ]]; then
   DISPLAY_PAUSE_MESSAGE=true
 fi
 
-./build-deploy.sh -maven.profiles=${MAVEN_PROFILES} --display.pause.message=${DISPLAY_PAUSE_MESSAGE} "$@"
+./build-deploy.sh --maven.profiles=${MAVEN_PROFILES} --conga.environment=${CONGA_ENVIRONMENT} --display.pause.message=${DISPLAY_PAUSE_MESSAGE} "$@"

@@ -345,7 +345,6 @@
         <!-- AEM instance parameters -->
         <sling.url>http://localhost:45025</sling.url>
         <sling.publish.url>http://localhost:45035</sling.publish.url>
-        <deploy.aem65>true</deploy.aem65>
       </properties>
     </profile>
 

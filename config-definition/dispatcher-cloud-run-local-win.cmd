@@ -6,13 +6,13 @@ echo.
 
 echo.--- Build Dispatcher config ---
 echo.
-call mvn -Pfast -Dconga.environments=cloud -Dconga.nodes=aem-dispatcher -Dconga.cloudManager.dispatcherConfig.skip=false clean package
+call mvn -Pfast -Dconga.environments=local-cloud -Dconga.nodes=aem-dispatcher -Dconga.cloudManager.dispatcherConfig.skip=false clean package
 if errorlevel 1 goto build_failed
 
 echo.--- Validate Dispatcher config ---
 echo.
 IF exist target\validator-ouput ( rmdir /s/q target\validator-ouput )
-%AEM_SDK_DISPATCHER_TOOLS%\bin\validator.exe full -d target/validator-ouput target/cloud.aem-dispatcher.dispatcher-config.zip
+%AEM_SDK_DISPATCHER_TOOLS%\bin\validator.exe full -d target/validator-ouput target/local-cloud.aem-dispatcher.dispatcher-config.zip
 if errorlevel 1 goto valiation_failed
 
 echo.

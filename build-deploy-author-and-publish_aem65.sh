@@ -33,17 +33,17 @@ if [[ $0 == *":\\"* ]]; then
 fi
 
 # Build application
-./build-deploy.sh build --maven.profiles=fast,aem65 "$@"
+./build-deploy.sh build --maven.profiles=fast,aem65 --conga.environment=local-aem65 "$@"
 if [ "$?" -ne "0" ]; then
   pause_message
   exit $?
 fi
 
 # Deploy to author (in parallel)
-./build-deploy.sh deploy --maven.profiles=fast,aem65 --conga.node=aem-author "$@" &
+./build-deploy.sh deploy --maven.profiles=fast,aem65 --conga.node=aem-author --conga.environment=local-aem65 "$@" &
 
 # Deploy to publish (in parallel)
-./build-deploy.sh deploy --maven.profiles=fast,publish,aem65 --conga.node=aem-publish "$@" &
+./build-deploy.sh deploy --maven.profiles=fast,publish,aem65 --conga.node=aem-publish --conga.environment=local-aem65 "$@" &
 
 wait
 pause_message

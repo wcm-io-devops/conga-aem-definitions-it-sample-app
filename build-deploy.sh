@@ -24,7 +24,7 @@ MAVEN_PROFILES="fast"
 SLING_URL=""
 SLING_USER=""
 SLING_PASSWORD=""
-CONGA_ENVIRONMENT="local"
+CONGA_ENVIRONMENT="local-cloud"
 CONGA_NODE="aem-author"
 JVM_ARGS=""
 
@@ -144,6 +144,7 @@ welcome_message() {
   fi
   echo ""
   echo -e "  Destination: \e[1m${CONGA_NODE}\e[0m (${MAVEN_PROFILES})"
+  echo -e "  Environment: \e[1m${CONGA_ENVIRONMENT}\e[0m"
   echo ""
   echo "********************************************************************"
 }

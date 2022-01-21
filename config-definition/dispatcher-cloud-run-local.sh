@@ -27,7 +27,7 @@ declare -x DISP_LOG_LEVEL="${DISP_LOG_LEVEL:-trace1}"
 # Local variables
 # -----------------------------------------------------------------------------
 declare -r validator_output_dir="target/validator-output"
-declare -r config_dir="src"
+declare -r config_dir="target/local-cloud.aem-dispatcher.dispatcher-config.zip"
 declare -r docker_host_domain="host.docker.internal"
 
 # -----------------------------------------------------------------------------
@@ -104,7 +104,7 @@ function prerequisites {
 }
 
 function conf_build {
-    mvn -Pfast -Dconga.environments=cloud -Dconga.nodes=aem-dispatcher -Dconga.cloudManager.dispatcherConfig.skip=false clean package
+    mvn -Pfast -Dconga.environments=local-cloud -Dconga.nodes=aem-dispatcher -Dconga.cloudManager.dispatcherConfig.skip=false clean package
 
     if [[ $? != 0 ]]; then
         error_log "Dispatcher config build failed (see messages above)!"
