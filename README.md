@@ -18,27 +18,14 @@ To build and deploy the application to your local AEM instance use these scripts
 * `build-deploy-publish.sh` - Build and deploy to publish instance
 * `build-deploy-author-and-publish.sh` - Build, and then deploy to author and publish instance (in parallel)
 
-The first deployment may take a while until all updated OSGi bundles are installed.
-
-After deployment you can open the sample content page in your browser:
-
-* Author: http://localhost:4502/editor.html/content/aemdef-it-sample/en.html
-* Publish: http://localhost:4503/content/aemdef-it-sample/en.html
-
-You can deploy individual bundles or content packages to the local AEM instances by using:
-
-* `mvn -Pfast cq:install` - Install and deploy bundle or content package to author instance
-* `mvn -Pfast,publish cq:install` - Install and deploy bundle or content package to publish instance
 
 ### System requirements
 
 * Java 11
 * Apache Maven 3.6.0 or higher
 * AEMaaCS SDK author/publish instance running on port 4502/4503
-* Or: AEM 6.5 author/publish instance running on port 45025/45035
-* To obtain the latest service packs via Maven you have to upload them manually to your Maven Artifact Manager following [these conventions][aem-binaries-conventions] for naming them.
-
-It is recommended to set up the local AEM instances with `nosamplecontent` run mode.
+  * Or: AEM 6.5 author/publish instance running on port 45025/45035
+  * To obtain the latest service packs via Maven you have to upload them manually to your Maven Artifact Manager following [these conventions][aem-binaries-conventions] for naming them.
 
 
 ### Project overview

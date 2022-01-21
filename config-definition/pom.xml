@@ -52,6 +52,13 @@
     <!-- wcm.io - Content packages with Sling-Initial-Content, see https://wcm-io.atlassian.net/l/c/d2FuEgf8 for details -->
     <dependency>
       <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.caconfig.editor</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
       <artifactId>io.wcm.handler.url</artifactId>
       <classifier>content</classifier>
       <type>zip</type>
@@ -74,6 +81,13 @@
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.handler.richtext</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.wcm.commons</artifactId>
       <classifier>content</classifier>
       <type>zip</type>
       <scope>compile</scope>

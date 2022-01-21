@@ -61,22 +61,36 @@ files:
       rootPath: /apps/aemdef-it-sample/config/rewriter
 
 # wcm.io
+- url: mvn:io.wcm/io.wcm.caconfig.editor//zip/content
+  dir: packages
+  condition: ${!(app.aem65)}
 - url: mvn:io.wcm/io.wcm.handler.url//zip/content
   dir: packages
+  condition: ${!(app.aem65)}
 - url: mvn:io.wcm/io.wcm.handler.link//zip/content
   dir: packages
+  condition: ${!(app.aem65)}
 - url: mvn:io.wcm/io.wcm.handler.media//zip/content
   dir: packages
+  condition: ${!(app.aem65)}
 - url: mvn:io.wcm/io.wcm.handler.richtext//zip/content
   dir: packages
+  condition: ${!(app.aem65)}
+- url: mvn:io.wcm/io.wcm.wcm.commons//zip/content
+  dir: packages
+  condition: ${!(app.aem65)}
 - url: mvn:io.wcm/io.wcm.wcm.core.components//zip/content
   dir: packages
+  condition: ${!(app.aem65)}
 - url: mvn:io.wcm/io.wcm.wcm.parsys//zip/content
   dir: packages
+  condition: ${!(app.aem65)}
 - url: mvn:io.wcm/io.wcm.wcm.ui.granite//zip/content
   dir: packages
+  condition: ${!(app.aem65)}
 - url: mvn:io.wcm/io.wcm.wcm.ui.clientlibs//zip/content
   dir: packages
+  condition: ${!(app.aem65)}
 
 # Application package
 - url: mvn:io.wcm.devops.conga.definitions.it/io.wcm.devops.conga.definitions.it.sample.complete//zip
