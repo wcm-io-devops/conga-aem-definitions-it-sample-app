@@ -1,0 +1,8 @@
+# vhost hostnames for publish dispatcher
+{{#each tenants ~}}
+{{#each this.config.httpd.cloudManagerConditional ~}}
+127.0.0.1 {{this.serverName}}
+{{else ~}}
+127.0.0.1 {{this.config.httpd.serverName}}
+{{/each ~}}
+{{/each}}
