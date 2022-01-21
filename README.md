@@ -1,6 +1,43 @@
 <img src="https://wcm.io/images/favicon-16@2x.png"/> CONGA AEM Definitions Integration Tests Sample Application
 ================
 
+### Deploy and run local Dispatcher with AEMaaCS SDK
+
+* Setup latest AEMaaCS SDK Author on port 4502, Publish on port 4503
+* Deploy application locally with `build-deploy-author-and-publish.sh`
+* Add local hosts:
+  ```
+  127.0.0.1 tenant1.aemdef-it-sample.localhost
+  127.0.0.1 tenant2.aemdef-it-sample.localhost
+  127.0.0.1 tenant3-no-mapping.aemdef-it-sample.localhost
+  ```
+* Start local dispatcher with `config-definition/dispatcher-cloud-run-local*` script
+  * Prequisite: Install aem-sdk-dispatcher-tools and point environment variable `AEM_SDK_DISPATCHER_TOOLS` to it
+* Open website per tenant:
+  * Tenant 1: http://tenant1.aemdef-it-sample.localhost:45031/
+  * Tenant 2: http://tenant2.aemdef-it-sample.localhost:45031/
+  * Tenant 3 (no mapping): http://tenant3-no-mapping.aemdef-it-sample.localhost:45031/
+
+
+### Deploy and run local Dispatcher with AEM 6.5
+
+* Setup AEM 6.5 Author on port 4502, Publish on port 4503
+* Deploy application locally with `build-deploy-author-and-publish_aem65.sh`
+* Add local hosts:
+  ```
+  127.0.0.1 tenant1.aemdef-it-sample-65.localhost
+  127.0.0.1 tenant2.aemdef-it-sample-65.localhost
+  127.0.0.1 tenant3-no-mapping.aemdef-it-sample-65.localhost
+  ```
+* Start local dispatcher: TBD
+* Open website per tenant:
+  * Tenant 1: http://tenant1.aemdef-it-sample-65.localhost:45031/
+  * Tenant 2: http://tenant2.aemdef-it-sample-65.localhost:45031/
+  * Tenant 3 (no mapping): http://tenant3-no-mapping.aemdef-it-sample-65.localhost:45031/
+
+
+---
+
 This is an AEM project set up with the [wcm.io Maven Archetype for AEM][wcmio-maven-archetype-aem].
 
 
