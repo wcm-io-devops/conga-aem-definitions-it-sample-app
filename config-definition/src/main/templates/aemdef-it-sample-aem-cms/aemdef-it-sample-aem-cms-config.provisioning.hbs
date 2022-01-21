@@ -45,6 +45,13 @@
       "io.wcm.caconfig.extensions.contextpath.impl.RootTemplateContextPathStrategy", \
       "io.wcm.caconfig.extensions.persistence.impl.PagePersistenceStrategy"]
 
+  # Site URL mappings for tenants
+  #org.apache.sling.caconfig.impl.override.OsgiConfigurationOverrideProvider~siteconfig
+  #  description="Author/Publish\ hostnames\ for\ URL\ externalization"
+  #  enabled=B"true"
+  #  overrides=[ \
+  #    "[/content/aemdef-it-sample/tenant1]io.wcm.handler.url.SiteConfig\={\"siteUrlAuthor\":\"http://localhost:4502\",\"siteUrl\":\"http://localhost:4503\"}"]
+
 [configurations runModes=author]
 
   # Show "Sites" view in TouchUI after login

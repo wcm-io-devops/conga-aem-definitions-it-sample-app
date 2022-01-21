@@ -49,17 +49,32 @@ config:
 
 
 tenants:
-- tenant: aemdef-it-sample
+- tenant: tenant1
   config:
     httpd:
-      # Simplified server name setup that can be deployed to any host name using "*" as server alias
-      serverName: publish
-      serverAliasNames:
-      - "*"
-      # Alternative: Use this setup to configure individual hostnames for dev/stage/prod in the cloud
-      #cloudManagerConditional:
-      #  dev.serverName: publish-XXX.adobeaemcloud.com
-      #  stage.serverName: publish-XXX.adobeaemcloud.com
-      #  prod.serverName: publish-XXX.adobeaemcloud.com
+      serverName: tenant1.aemdef-it-sample.dev
+      cloudManagerConditional:
+        dev.serverName: dev.tenant1.aemdef-it-sample.dev
+        stage.serverName: stage.tenant1.aemdef-it-sample.dev
+        prod.serverName: prod.tenant1.aemdef-it-sample.dev
       rootRedirect.url: /en.html
-    sling.mapping.rootPath: /content/aemdef-it-sample
+    sling.mapping.rootPath: /content/aemdef-it-sample/tenant1
+- tenant: tenant2
+  config:
+    httpd:
+      serverName: tenant2.aemdef-it-sample.dev
+      cloudManagerConditional:
+        dev.serverName: dev.tenant2.aemdef-it-sample.dev
+        stage.serverName: stage.tenant2.aemdef-it-sample.dev
+        prod.serverName: prod.tenant2.aemdef-it-sample.dev
+      rootRedirect.url: /en.html
+    sling.mapping.rootPath: /content/aemdef-it-sample/tenant2
+- tenant: tenant3-no-mapping
+  config:
+    httpd:
+      serverName: tenant3-no-mapping.aemdef-it-sample.dev
+      cloudManagerConditional:
+        dev.serverName: dev.tenant3-no-mapping.aemdef-it-sample.dev
+        stage.serverName: stage.tenant3-no-mapping.aemdef-it-sample.dev
+        prod.serverName: prod.tenant3-no-mapping.aemdef-it-sample.dev
+      rootRedirect.url: /content/aemdef-it-sample/tenant3-no-mapping/en.html
