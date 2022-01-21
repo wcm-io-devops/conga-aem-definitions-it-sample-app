@@ -4,6 +4,7 @@
     <jcr:content
         cq:template="/conf/aemdef-it-sample/settings/wcm/templates/contentpage"
         jcr:primaryType="cq:PageContent"
+        jcr:title="Page 2"
         sling:resourceType="aemdef-it-sample/core/components/global/page">
         <root
             jcr:primaryType="nt:unstructured"
@@ -16,5 +17,6 @@
                     sling:resourceType="aemdef-it-sample/core/components/content/title"/>
             </content>
         </root>
+        <cq:featuredimage jcr:primaryType="nt:unstructured"/>
     </jcr:content>
 </jcr:root>

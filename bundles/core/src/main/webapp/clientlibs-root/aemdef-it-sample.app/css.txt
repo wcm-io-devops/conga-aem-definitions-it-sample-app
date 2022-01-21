@@ -2,3 +2,5 @@
 
 image.css
 customcarousel.css
+navigation.css
+imprint.css

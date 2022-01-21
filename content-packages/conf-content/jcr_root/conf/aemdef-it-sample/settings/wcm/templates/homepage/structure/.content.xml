@@ -12,6 +12,12 @@
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="aemdef-it-sample/core/components/container/container">
+            <navigation
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="aemdef-it-sample/core/components/templating/navigation"
+                collectAllPages="true"
+                structureDepth="1"
+                structureStart="0"/>
             <content
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="aemdef-it-sample/core/components/container/container"

@@ -1,0 +1,8 @@
+.cmp-navigation {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.cmp-navigation ul, .cmp-navigation li {
+  display: inline;
+  margin-right: 10px;
+}

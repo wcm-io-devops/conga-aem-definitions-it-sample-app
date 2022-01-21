@@ -6,10 +6,13 @@
         cq:deviceGroups="[mobile/groups/responsive]"
         cq:template="/conf/aemdef-it-sample/settings/wcm/templates/homepage"
         jcr:primaryType="cq:PageContent"
-        jcr:title="en"
+        jcr:title="de"
         sling:resourceType="aemdef-it-sample/core/components/global/page"
         navTitle="HOME"
-        pageTitle="aemdef-it-sample Sample Site">
+        pageTitle="aemdef-it-sample Sample Site"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="aemdef-it-sample/core/components/container/container">
@@ -33,7 +36,7 @@
                 </customcarousel>
                 <title
                     jcr:primaryType="nt:unstructured"
-                    jcr:title="Hello aemdef-it-sample"
+                    jcr:title="&#xA;        &#xA;        &#xA;        Tenant 1 (de)&#xA;    "
                     sling:resourceType="aemdef-it-sample/core/components/content/title"
                     type="h1"/>
                 <text
@@ -43,6 +46,11 @@
                     textIsRich="true"/>
             </content>
         </root>
+        <cq:featuredimage
+            jcr:primaryType="nt:unstructured"
+            altValueFromDAM="false"/>
     </jcr:content>
     <tools/>
+    <page-1/>
+    <page-2/>
 </jcr:root>
