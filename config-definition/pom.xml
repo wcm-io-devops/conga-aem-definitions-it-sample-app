@@ -36,6 +36,14 @@
     </dependency>
     <dependency>
       <groupId>io.wcm.devops.conga.definitions.it</groupId>
+      <artifactId>io.wcm.devops.conga.definitions.it.sample.core</artifactId>
+      <classifier>content</classifier>
+      <version>1.0.0-SNAPSHOT</version>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm.devops.conga.definitions.it</groupId>
       <artifactId>io.wcm.devops.conga.definitions.it.sample.conf-content</artifactId>
       <version>1.0.0-SNAPSHOT</version>
       <type>zip</type>

@@ -95,6 +95,9 @@ files:
 # Application package
 - url: mvn:io.wcm.devops.conga.definitions.it/io.wcm.devops.conga.definitions.it.sample.complete//zip
   dir: packages
+- url: mvn:io.wcm.devops.conga.definitions.it/io.wcm.devops.conga.definitions.it.sample.core//zip/content
+  dir: packages
+  condition: ${!(app.aem65)}
 
 # Application conf content package
 - url: mvn:io.wcm.devops.conga.definitions.it/io.wcm.devops.conga.definitions.it.sample.conf-content//zip
