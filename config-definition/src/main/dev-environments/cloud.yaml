@@ -53,28 +53,30 @@ tenants:
   config:
     httpd:
       serverName: tenant1.aemdef-it-sample.dev
-      cloudManagerConditional:
-        dev.serverName: dev.tenant1.aemdef-it-sample.dev
-        stage.serverName: stage.tenant1.aemdef-it-sample.dev
-        prod.serverName: prod.tenant1.aemdef-it-sample.dev
+      # default tenant for deploying to cloud sandbox
+      serverAlias: "*.adobeaemcloud.com"
+      #cloudManagerConditional:
+      #  dev.serverName: dev.tenant1.aemdef-it-sample.dev
+      #  stage.serverName: stage.tenant1.aemdef-it-sample.dev
+      #  prod.serverName: prod.tenant1.aemdef-it-sample.dev
       rootRedirect.url: /en.html
     sling.mapping.rootPath: /content/aemdef-it-sample/tenant1
 - tenant: tenant2
   config:
     httpd:
       serverName: tenant2.aemdef-it-sample.dev
-      cloudManagerConditional:
-        dev.serverName: dev.tenant2.aemdef-it-sample.dev
-        stage.serverName: stage.tenant2.aemdef-it-sample.dev
-        prod.serverName: prod.tenant2.aemdef-it-sample.dev
+      #cloudManagerConditional:
+      #  dev.serverName: dev.tenant2.aemdef-it-sample.dev
+      #  stage.serverName: stage.tenant2.aemdef-it-sample.dev
+      #  prod.serverName: prod.tenant2.aemdef-it-sample.dev
       rootRedirect.url: /en.html
     sling.mapping.rootPath: /content/aemdef-it-sample/tenant2
 - tenant: tenant3-no-mapping
   config:
     httpd:
       serverName: tenant3-no-mapping.aemdef-it-sample.dev
-      cloudManagerConditional:
-        dev.serverName: dev.tenant3-no-mapping.aemdef-it-sample.dev
-        stage.serverName: stage.tenant3-no-mapping.aemdef-it-sample.dev
-        prod.serverName: prod.tenant3-no-mapping.aemdef-it-sample.dev
+      #cloudManagerConditional:
+      #  dev.serverName: dev.tenant3-no-mapping.aemdef-it-sample.dev
+      #  stage.serverName: stage.tenant3-no-mapping.aemdef-it-sample.dev
+      #  prod.serverName: prod.tenant3-no-mapping.aemdef-it-sample.dev
       rootRedirect.url: /content/aemdef-it-sample/tenant3-no-mapping/en.html
