@@ -19,9 +19,9 @@ echo.
 echo.--- Start dispatcher in docker ---
 echo.
 echo.Expects AEM publish instance on: http://localhost:4503
-echo.Access dispatcher on:            http://localhost:45031
+echo.Access dispatcher on:            http://localhost:5503
 echo.
-call %AEM_SDK_DISPATCHER_TOOLS%\bin\docker_run.cmd target\validator-ouput host.docker.internal:4503 45031
+call %AEM_SDK_DISPATCHER_TOOLS%\bin\docker_run.cmd target\validator-ouput host.docker.internal:4503 5503
 if errorlevel 1 goto docker_failed
 
 exit

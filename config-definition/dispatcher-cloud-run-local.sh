@@ -12,7 +12,7 @@ set -o nounset
 # Global variables
 # -----------------------------------------------------------------------------
 declare AEM_SDK_DISPATCHER_TOOLS="${AEM_SDK_DISPATCHER_TOOLS}"
-declare DISP_PORT="${DISP_PORT:-45031}"
+declare DISP_PORT="${DISP_PORT:-5503}"
 declare PUBLISH_PORT="${PUBLISH_PORT:-4503}"
 declare DISP_PRESERVE_CACHE="${DISP_PRESERVE_CACHE:-0}"
 

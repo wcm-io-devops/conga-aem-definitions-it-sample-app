@@ -11,12 +11,12 @@
   127.0.0.1 tenant2.aemdef-it-sample.localhost
   127.0.0.1 tenant3-no-mapping.aemdef-it-sample.localhost
   ```
-* Start local dispatcher with `config-definition/dispatcher-cloud-run-local*` script
+* Start local dispatcher in docker with `config-definition/dispatcher-cloud-run-local*` script
   * Prequisite: Install aem-sdk-dispatcher-tools and point environment variable `AEM_SDK_DISPATCHER_TOOLS` to it
 * Open website per tenant:
-  * Tenant 1: http://tenant1.aemdef-it-sample.localhost:45031/
-  * Tenant 2: http://tenant2.aemdef-it-sample.localhost:45031/
-  * Tenant 3 (no mapping): http://tenant3-no-mapping.aemdef-it-sample.localhost:45031/
+  * Tenant 1: http://tenant1.aemdef-it-sample.localhost:5503/
+  * Tenant 2: http://tenant2.aemdef-it-sample.localhost:5503/
+  * Tenant 3 (no mapping): http://tenant3-no-mapping.aemdef-it-sample.localhost:5503/
 
 
 ### Deploy and run local Dispatcher with AEM 6.5
