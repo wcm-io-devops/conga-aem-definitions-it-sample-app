@@ -17,6 +17,11 @@
   <name>aemdef-it-sample config-definition</name>
   <description>CONGA roles and template definitions</description>
 
+  <properties>
+    <!-- Default CONGA environment for cloud build -->
+    <conga.environments>cloud</conga.environments>
+  </properties>
+
   <dependencies>
 
     <!-- Use generic AEM CMS and Dispatcher roles -->
