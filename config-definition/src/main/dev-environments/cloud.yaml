@@ -55,7 +55,7 @@ tenants:
       serverName: tenant1.aemdef-it-sample.dev
       # default tenant for deploying to cloud sandbox
       serverAliasNames:
-      - "*.adobeaemcloud.com"
+      - "*"
       #cloudManagerConditional:
       #  dev.serverName: dev.tenant1.aemdef-it-sample.dev
       #  stage.serverName: stage.tenant1.aemdef-it-sample.dev
