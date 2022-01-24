@@ -28,7 +28,7 @@ nodes:
         rootPath: /var/cache/publish1
         statFilesLevel: 2
       renderInstance:
-        host: localhost
+        host: host.docker.internal
         port: 4503
       # Allow access to model.json
       filter:
@@ -61,16 +61,19 @@ tenants:
   config:
     httpd:
       serverName: tenant1.aemdef-it-sample-65.localhost
+      serverPort: 55035
       rootRedirect.url: /en.html
     sling.mapping.rootPath: /content/aemdef-it-sample/tenant1
 - tenant: tenant2
   config:
     httpd:
       serverName: tenant2.aemdef-it-sample-65.localhost
+      serverPort: 55035
       rootRedirect.url: /en.html
     sling.mapping.rootPath: /content/aemdef-it-sample/tenant2
 - tenant: tenant3-no-mapping
   config:
     httpd:
       serverName: tenant3-no-mapping.aemdef-it-sample-65.localhost
+      serverPort: 55035
       rootRedirect.url: /content/aemdef-it-sample/tenant3-no-mapping/en.html
