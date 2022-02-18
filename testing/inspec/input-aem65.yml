@@ -1,0 +1,3 @@
+tenant1_url: http://tenant1.aemdef-it-sample-65.localhost:55035
+tenant2_url: http://tenant2.aemdef-it-sample-65.localhost:55035
+tenant3_url: http://tenant3-no-mapping.aemdef-it-sample-65.localhost:55035

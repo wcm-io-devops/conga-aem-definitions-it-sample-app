@@ -13,15 +13,15 @@ inputs:
   - name: tenant1_url
     description: Root URL for for tenant1
     type: string
-    value: http://tenant1.aemdef-it-sample.localhost:5503/
+    value: http://tenant1.aemdef-it-sample.localhost:5503
     required: true
   - name: tenant2_url
     description: Root URL for for tenant1
     type: string
-    value: http://tenant2.aemdef-it-sample.localhost:5503/
+    value: http://tenant2.aemdef-it-sample.localhost:5503
     required: true
   - name: tenant3_url
     description: Root URL for for tenant1
     type: string
-    value: http://tenant3-no-mapping.aemdef-it-sample.localhost:5503/
+    value: http://tenant3-no-mapping.aemdef-it-sample.localhost:5503
     required: true

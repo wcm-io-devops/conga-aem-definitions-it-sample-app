@@ -6,13 +6,19 @@
 InSpec ships with built-in features to verify a profile structure.
 
 ```bash
-$ inspec check .
+inspec check .
 ```
 
 ## Execute profile
 
-To run all **supported** controls on a local machine use `inspec exec /path/to/profile`.
+Execute against local AEMaaCS dispatcher:
 
 ```bash
-$ inspec exec .
+inspec exec .
+```
+
+Execute against local AEM 6.5 dispatcher:
+
+```bash
+inspec exec . --input-file input-aem65.yml
 ```
