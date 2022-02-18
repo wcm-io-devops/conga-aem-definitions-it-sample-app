@@ -38,5 +38,6 @@
     <module>content-packages/conf-content</module>
     <module>content-packages/sample-content</module>
     <module>config-definition</module>
+    <module>testing/dispatcher-integration</module>
   </modules>
 </project>

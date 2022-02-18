@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.wcm.devops.conga.definitions.it</groupId>
+    <artifactId>io.wcm.devops.conga.definitions.it.sample.parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../../parent/pom.xml</relativePath>
+  </parent>
+
+  <groupId>io.wcm.devops.conga.definitions.it</groupId>
+  <artifactId>io.wcm.devops.conga.definitions.it.dispatcher-integration</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>HTMLUnit-based Integration testst running against dispatcher</name>
+  
+  <properties>
+    <tenant1.url>http://tenant1.aemdef-it-sample.localhost:5503</tenant1.url>
+    <tenant2.url>http://tenant2.aemdef-it-sample.localhost:5503</tenant2.url>
+    <tenant3.url>http://tenant3-no-mapping.aemdef-it-sample.localhost:5503</tenant3.url>
+
+    <!-- Skip integeration tests in default build -->
+    <integrationtests.skip>true</integrationtests.skip>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.sourceforge.htmlunit</groupId>
+      <artifactId>htmlunit</artifactId>
+      <version>2.58.0</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <configuration>
+          <systemPropertyVariables>
+            <tenant1.url>${tenant1.url}</tenant1.url>
+            <tenant2.url>${tenant2.url}</tenant2.url>
+            <tenant3.url>${tenant3.url}</tenant3.url>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>aem65</id>
+      <properties>
+        <tenant1.url>http://tenant1.aemdef-it-sample-65.localhost:55035</tenant1.url>
+        <tenant2.url>http://tenant2.aemdef-it-sample-65.localhost:55035</tenant2.url>
+        <tenant3.url>http://tenant3-no-mapping.aemdef-it-sample-65.localhost:55035</tenant3.url>
+      </properties>
+    </profile>
+  </profiles>
+
+</project>
