@@ -55,6 +55,12 @@ To build and deploy the application to your local AEM instance use these scripts
 * `build-deploy-publish.sh` - Build and deploy to publish instance
 * `build-deploy-author-and-publish.sh` - Build, and then deploy to author and publish instance (in parallel)
 
+Alternatively use these script to deploy to local AEM 6.5 instance:
+
+* `build-deploy-65.sh` - Build and deploy to author instance
+* `build-deploy-publish-65.sh` - Build and deploy to publish instance
+* `build-deploy-author-and-publish-65.sh` - Build, and then deploy to author and publish instance (in parallel)
+
 
 ### System requirements
 
