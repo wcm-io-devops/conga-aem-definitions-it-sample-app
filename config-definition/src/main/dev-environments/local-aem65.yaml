@@ -29,7 +29,7 @@ nodes:
         statFilesLevel: 2
       renderInstance:
         host: host.docker.internal
-        port: 4503
+        port: 45035
       # Allow access to model.json
       filter:
       - _merge_
