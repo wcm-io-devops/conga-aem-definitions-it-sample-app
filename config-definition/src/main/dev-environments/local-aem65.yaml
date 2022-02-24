@@ -50,6 +50,8 @@ config:
     sampleContent: true
     # AEM 6.5 deployment
     aem65: true
+    serverProtocol: http
+    authorSiteUrl: http://localhost:45025
 
   # Not used for AEM cloud
   cloudManager.target:
@@ -59,21 +61,24 @@ config:
 tenants:
 - tenant: tenant1
   config:
+    app.rootPath: /content/aemdef-it-sample/tenant1
     httpd:
       serverName: tenant1.aemdef-it-sample-65.localhost
       serverPort: 55035
       rootRedirect.url: /en.html
-    sling.mapping.rootPath: /content/aemdef-it-sample/tenant1
+    sling.mapping.rootPath: ${app.rootPath}
 - tenant: tenant2
   config:
+    app.rootPath: /content/aemdef-it-sample/tenant2
     httpd:
       serverName: tenant2.aemdef-it-sample-65.localhost
       serverPort: 55035
       rootRedirect.url: /en.html
-    sling.mapping.rootPath: /content/aemdef-it-sample/tenant2
+    sling.mapping.rootPath: ${app.rootPath}
 - tenant: tenant3-no-mapping
   config:
+    app.rootPath: /content/aemdef-it-sample/tenant3-no-mapping
     httpd:
       serverName: tenant3-no-mapping.aemdef-it-sample-65.localhost
       serverPort: 55035
-      rootRedirect.url: /content/aemdef-it-sample/tenant3-no-mapping/en.html
+      rootRedirect.url: ${app.rootPath}/en.html

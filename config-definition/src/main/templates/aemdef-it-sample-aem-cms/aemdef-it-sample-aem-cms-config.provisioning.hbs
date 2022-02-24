@@ -46,11 +46,18 @@
       "io.wcm.caconfig.extensions.persistence.impl.PagePersistenceStrategy"]
 
   # Site URL mappings for tenants
-  #org.apache.sling.caconfig.impl.override.OsgiConfigurationOverrideProvider~siteconfig
-  #  description="Author/Publish\ hostnames\ for\ URL\ externalization"
-  #  enabled=B"true"
-  #  overrides=[ \
-  #    "[/content/aemdef-it-sample/tenant1]io.wcm.handler.url.SiteConfig\={\"siteUrlAuthor\":\"http://localhost:4502\",\"siteUrl\":\"http://localhost:4503\"}"]
+  org.apache.sling.caconfig.impl.override.OsgiConfigurationOverrideProvider~siteconfig
+    description="Publish\ hostnames\ for\ URL\ externalization"
+    enabled=B"true"
+    overrides=[ \
+{{#each tenants ~}}
+  {{#ifEquals app.serverProtocol "https" ~}}
+      "[{{this.config.app.rootPath}}]io.wcm.handler.url.SiteConfig\={\"siteUrlAuthor\":\"{{app.authorSiteUrl}}\",\"siteUrl\":\"https://{{httpHostSsl this.config.httpd.serverName port=this.config.httpd.serverPort}}\"}"{{#unless @last}},{{/unless}} \
+  {{else ~}}
+      "[{{this.config.app.rootPath}}]io.wcm.handler.url.SiteConfig\={\"siteUrlAuthor\":\"{{app.authorSiteUrl}}\",\"siteUrl\":\"http://{{httpHost this.config.httpd.serverName port=this.config.httpd.serverPort}}\"}"{{#unless @last}},{{/unless}} \
+  {{/ifEquals ~}}
+{{/each ~}}
+    ]
 
 [configurations runModes=author]
 
