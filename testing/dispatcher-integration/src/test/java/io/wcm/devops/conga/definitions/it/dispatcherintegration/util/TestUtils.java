@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
+import org.jetbrains.annotations.NotNull;
 
 import com.gargoylesoftware.htmlunit.html.DomAttr;
 import com.gargoylesoftware.htmlunit.html.DomElement;
@@ -42,6 +43,7 @@ public final class TestUtils {
    */
   public static void assertAllResourcesHttpOk(HtmlPage page) throws IOException, InterruptedException {
     Location location = (Location)page.executeJavaScript("window.location").getJavaScriptResult();
+    String locationHost = buildHostname(location);
 
     HttpClient httpClient = HttpClient.newBuilder()
         .connectTimeout(Duration.ofSeconds(10))
@@ -60,7 +62,13 @@ public final class TestUtils {
 
       // prepend URL with hostname if required
       if (StringUtils.startsWith(url, "/")) {
-        url = location.getProtocol() + "//" + location.getHostname() + ":" + location.getPort() + url;
+        url = locationHost + url;
+      }
+
+      // all references should target the same AEM/dispatcher host
+      if (!(StringUtils.equals(url, locationHost) || StringUtils.startsWith(url, locationHost + "/"))) {
+        failures.add(element.toString() + " ==> URL does not point to " + locationHost);
+        continue;
       }
 
       // check for HTTP status 200
@@ -73,6 +81,19 @@ public final class TestUtils {
     if (!failures.isEmpty()) {
       fail(StringUtils.join(failures, "\n"));
     }
+  }
+
+  private static String buildHostname(@NotNull Location location) {
+    StringBuilder sb = new StringBuilder();
+    sb.append(location.getProtocol()).append("//").append(location.getHost());
+
+    if (StringUtils.isNotBlank(location.getPort())
+        && (StringUtils.equals(location.getProtocol(), "http:") && !StringUtils.equals(location.getPort(), "80"))
+        && (StringUtils.equals(location.getProtocol(), "https:") && !StringUtils.equals(location.getPort(), "443"))) {
+      sb.append(":").append(location.getPort());
+    }
+
+    return sb.toString();
   }
 
   /**
