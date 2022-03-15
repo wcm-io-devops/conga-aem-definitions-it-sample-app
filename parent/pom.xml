@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>2.0.3-SNAPSHOT</version>
+    <version>2.0.6</version>
     <relativePath/>
   </parent>
 
@@ -95,9 +95,9 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
+        <version>1.10.0</version>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.10.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -117,38 +117,38 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.url</artifactId>
-        <version>1.6.1-SNAPSHOT</version>
+        <version>1.7.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.url</artifactId>
+        <version>1.7.0</version>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.6.1-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.8.1-SNAPSHOT</version>
+        <version>1.9.1-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
+        <version>1.9.1-SNAPSHOT</version>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.8.1-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.13.8</version>
+        <version>1.14.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
+        <version>1.14.0</version>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.13.8</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -158,9 +158,9 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.richtext</artifactId>
-        <classifier>content</classifier>
-        <type>zip</type>
         <version>1.5.8</version>
+        <classifier>content</classifier>
+        <type>zip</type>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -170,9 +170,9 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.commons</artifactId>
+        <version>1.9.0</version>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.9.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -182,9 +182,9 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <classifier>content</classifier>
-        <type>zip</type>
         <version>1.9.2-2.17.12</version>
+        <classifier>content</classifier>
+        <type>zip</type>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -194,21 +194,21 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>
-        <classifier>content</classifier>
-        <type>zip</type>
         <version>1.6.8</version>
-      </dependency>
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.9.0</version>
-      </dependency>
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.ui.granite</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.9.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.ui.granite</artifactId>
+        <version>1.9.2</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.ui.granite</artifactId>
+        <version>1.9.2</version>
+        <classifier>content</classifier>
+        <type>zip</type>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -218,14 +218,14 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
+        <version>1.2.2</version>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.2.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
         <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
-        <version>1.11.5-SNAPSHOT</version>
+        <version>1.12.0</version>
       </dependency>
 
       <!-- wcm.io Testing -->
