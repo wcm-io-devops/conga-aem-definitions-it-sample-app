@@ -1,7 +1,7 @@
 @echo off
 
 if not defined AEM_SDK_DISPATCHER_TOOLS ( goto aem_sdk_dispatcher_tools_undefined )
-echo.Usen AEM SDK Dispatcher Tools: %AEM_SDK_DISPATCHER_TOOLS%
+echo.Using AEM SDK Dispatcher Tools: %AEM_SDK_DISPATCHER_TOOLS%
 echo.
 
 echo.--- Build Dispatcher config ---
