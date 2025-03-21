@@ -177,12 +177,12 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.9.2-2.17.12</version>
+        <version>1.14.0-2.23.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.9.2-2.17.12</version>
+        <version>1.14.0-2.23.2</version>
         <classifier>content</classifier>
         <type>zip</type>
       </dependency>
