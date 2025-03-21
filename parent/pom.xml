@@ -189,12 +189,12 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>
-        <version>1.6.8</version>
+        <version>1.7.4</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>
-        <version>1.6.8</version>
+        <version>1.7.4</version>
         <classifier>content</classifier>
         <type>zip</type>
       </dependency>
