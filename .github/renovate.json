@@ -6,6 +6,7 @@
   ],
   "ignoreDeps": [
     "io.wcm.maven:io.wcm.maven.aem-dependencies",
+    "io.wcm:io.wcm.caconfig.extensions",
     "io.wcm.devops.conga.definitions.it:io.wcm.devops.conga.definitions.it.sample.parent",
     "io.wcm.devops.conga.definitions.it:io.wcm.devops.conga.definitions.it.sample.complete",
     "io.wcm.devops.conga.definitions.it:io.wcm.devops.conga.definitions.it.sample.core",
