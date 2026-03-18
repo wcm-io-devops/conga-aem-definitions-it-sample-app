@@ -25,24 +25,6 @@ files:
   dir: packages
   condition: ${app.aem65}
 
-# AEM OSGi System Configuration
-- file: aemdef-it-sample-aem-cms-config.provisioning
-  dir: packages
-  template: aemdef-it-sample-aem-cms-config.provisioning.hbs
-  postProcessors:
-  - aem-contentpackage-osgiconfig
-  postProcessorOptions:
-    contentPackage:
-      name: aemdef-it-sample-aem-cms-config
-      rootPath: /apps/aemdef-it-sample/config
-      filters:
-      - filter: /apps/aemdef-it-sample
-        rules:
-        - rule: include
-          pattern: /apps/aemdef-it-sample/config(\..*)?(/.*)?
-        - rule: exclude
-          pattern: /apps/aemdef-it-sample/config/rewriter(/.*)?
-
 # Include URL handler in Sling Rewriter configuration
 - file: aemdef-it-sample-aem-cms-rewriter-config.json
   dir: packages
@@ -71,6 +53,24 @@ files:
 - url: mvn:io.wcm.devops.conga.definitions.it/io.wcm.devops.conga.definitions.it.sample.conf-content//zip
   dir: packages
   condition: ${app.confContent}
+
+# AEM OSGi System Configuration
+- file: aemdef-it-sample-aem-cms-config.provisioning
+  dir: packages
+  template: aemdef-it-sample-aem-cms-config.provisioning.hbs
+  postProcessors:
+  - aem-contentpackage-osgiconfig
+  postProcessorOptions:
+    contentPackage:
+      name: aemdef-it-sample-aem-cms-config
+      rootPath: /apps/aemdef-it-sample/config
+      filters:
+      - filter: /apps/aemdef-it-sample
+        rules:
+        - rule: include
+          pattern: /apps/aemdef-it-sample/config(\..*)?(/.*)?
+        - rule: exclude
+          pattern: /apps/aemdef-it-sample/config/rewriter(/.*)?
 
 # Application sample content package
 - url: mvn:io.wcm.devops.conga.definitions.it/io.wcm.devops.conga.definitions.it.sample.sample-content//zip
