@@ -68,6 +68,14 @@
         <tenant3.url>http://tenant3-no-mapping.aemdef-it-sample-65.localhost:55035</tenant3.url>
       </properties>
     </profile>
+    <profile>
+      <id>aem66</id>
+      <properties>
+        <tenant1.url>http://tenant1.aemdef-it-sample-66.localhost:55036</tenant1.url>
+        <tenant2.url>http://tenant2.aemdef-it-sample-66.localhost:55036</tenant2.url>
+        <tenant3.url>http://tenant3-no-mapping.aemdef-it-sample-66.localhost:55036</tenant3.url>
+      </properties>
+    </profile>
   </profiles>
 
 </project>

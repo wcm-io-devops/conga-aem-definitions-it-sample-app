@@ -23,7 +23,7 @@ files:
 # AEM Core WCM components
 - url: mvn:com.adobe.cq/core.wcm.components.all//zip
   dir: packages
-  condition: ${app.aem65}
+  condition: ${app.aem65 || app.aem66}
 
 # Include URL handler in Sling Rewriter configuration
 - file: aemdef-it-sample-aem-cms-rewriter-config.json
@@ -47,7 +47,7 @@ files:
   dir: packages
 - url: mvn:io.wcm.devops.conga.definitions.it/io.wcm.devops.conga.definitions.it.sample.core//zip/content
   dir: packages
-  condition: ${!(app.aem65)}
+  condition: ${!(app.aem65 || app.aem66)}
 
 # Application conf content package
 - url: mvn:io.wcm.devops.conga.definitions.it/io.wcm.devops.conga.definitions.it.sample.conf-content//zip
