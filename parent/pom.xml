@@ -285,15 +285,6 @@
         <sling.url>http://localhost:45025</sling.url>
         <sling.publish.url>http://localhost:45035</sling.publish.url>
       </properties>
-      <dependencyManagement>
-        <dependencies>
-          <dependency>
-            <groupId>io.wcm</groupId>
-            <artifactId>io.wcm.caconfig.extensions</artifactId>
-            <version>1.8.8</version>
-          </dependency>
-        </dependencies>
-      </dependencyManagement>
     </profile>
 
     <!-- Deployment to AEM 6.6 -->
