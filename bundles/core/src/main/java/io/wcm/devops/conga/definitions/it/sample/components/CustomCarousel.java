@@ -18,6 +18,7 @@ import io.wcm.handler.media.MediaHandler;
 
 /**
  * Model for the custom carousel component.
+ *
  * <p>
  * Please note: There is already is a pre-built "Carousel" Core Component which does basically the same
  * as this component with a much more sophisticated edit mode support. Use it, instead of this demo component!
@@ -68,14 +69,16 @@ public class CustomCarousel {
   }
 
   /**
-   * @return Unique ID of this component that can be used in HTML markup
+   * Unique ID of this component that can be used in HTML markup
+   * @return ID
    */
   public String getId() {
     return id;
   }
 
   /**
-   * @return List of images for each slide
+   * List of images for each slide
+   * @return Images
    */
   public List<Media> getSlideImages() {
     return Collections.unmodifiableList(this.slideImages);

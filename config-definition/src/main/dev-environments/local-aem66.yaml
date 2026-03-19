@@ -1,4 +1,4 @@
-# AEM configuration local AEM 6.5 environment with local dispatcher
+# AEM configuration local AEM 6.6 environment with local dispatcher
 
 nodes:
 
@@ -29,7 +29,7 @@ nodes:
         statFilesLevel: 2
       renderInstance:
         host: host.docker.internal
-        port: 45035
+        port: 45036
       # Allow access to model.json
       filter:
       - _merge_
@@ -48,10 +48,10 @@ config:
     confContent: true
     # Whether to deploy sample content
     sampleContent: true
-    # AEM 6.5 deployment
-    aem65: true
+    # AEM 6.6 deployment
+    aem66: true
     serverProtocol: http
-    authorSiteUrl: http://localhost:45025
+    authorSiteUrl: http://localhost:45026
 
   # Not used for AEM cloud
   cloudManager.target:
@@ -63,22 +63,22 @@ tenants:
   config:
     app.rootPath: /content/aemdef-it-sample/tenant1
     httpd:
-      serverName: tenant1.aemdef-it-sample-65.localhost
-      serverPort: 5505
+      serverName: tenant1.aemdef-it-sample-66.localhost
+      serverPort: 5506
       rootRedirect.url: /en.html
     sling.mapping.rootPath: ${app.rootPath}
 - tenant: tenant2
   config:
     app.rootPath: /content/aemdef-it-sample/tenant2
     httpd:
-      serverName: tenant2.aemdef-it-sample-65.localhost
-      serverPort: 5505
+      serverName: tenant2.aemdef-it-sample-66.localhost
+      serverPort: 5506
       rootRedirect.url: /en.html
     sling.mapping.rootPath: ${app.rootPath}
 - tenant: tenant3-no-mapping
   config:
     app.rootPath: /content/aemdef-it-sample/tenant3-no-mapping
     httpd:
-      serverName: tenant3-no-mapping.aemdef-it-sample-65.localhost
-      serverPort: 5505
+      serverName: tenant3-no-mapping.aemdef-it-sample-66.localhost
+      serverPort: 5506
       rootRedirect.url: ${app.rootPath}/en.html

@@ -12,9 +12,8 @@ templateDir: aemdef-it-sample-aem-cms
 
 files:
 
-
 # AEM Service Pack
-- url: mvn:adobe.binary.aem.65.servicepack/aem-service-pkg/6.5.22.0/zip
+- url: mvn:adobe.binary.aem.65.servicepack/aem-service-pkg/6.5.24.0/zip
   dir: packages
   modelOptions:
     delayAfterInstallSec: 30
@@ -23,6 +22,17 @@ files:
 # AEM Core WCM components
 - url: mvn:com.adobe.cq/core.wcm.components.all//zip
   dir: packages
+  condition: ${app.aem65 || app.aem66}
+
+# Context-Aware Configuration
+- url: mvn:org.apache.sling/org.apache.sling.caconfig.api
+  dir: bundles
+  condition: ${app.aem65}
+- url: mvn:org.apache.sling/org.apache.sling.caconfig.spi
+  dir: bundles
+  condition: ${app.aem65}
+- url: mvn:org.apache.sling/org.apache.sling.caconfig.impl
+  dir: bundles
   condition: ${app.aem65}
 
 # Include URL handler in Sling Rewriter configuration
@@ -47,7 +57,7 @@ files:
   dir: packages
 - url: mvn:io.wcm.devops.conga.definitions.it/io.wcm.devops.conga.definitions.it.sample.core//zip/content
   dir: packages
-  condition: ${!(app.aem65)}
+  condition: ${!(app.aem65 || app.aem66)}
 
 # Application conf content package
 - url: mvn:io.wcm.devops.conga.definitions.it/io.wcm.devops.conga.definitions.it.sample.conf-content//zip
@@ -93,6 +103,7 @@ config:
     confContent: true
     sampleContent: false
     aem65: false
+    aem66: false
     rootPath:
     serverProtocol: https
     authorSiteUrl:

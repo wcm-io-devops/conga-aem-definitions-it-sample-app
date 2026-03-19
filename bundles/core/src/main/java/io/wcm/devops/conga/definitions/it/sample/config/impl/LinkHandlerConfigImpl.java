@@ -8,8 +8,8 @@ import org.jetbrains.annotations.Nullable;
 import org.osgi.service.component.annotations.Component;
 
 import com.day.cq.wcm.api.Page;
-import com.google.common.collect.ImmutableList;
 
+import io.wcm.devops.conga.definitions.it.sample.config.AppTemplate;
 import io.wcm.handler.link.spi.LinkHandlerConfig;
 import io.wcm.handler.link.spi.LinkType;
 import io.wcm.handler.link.type.ExternalLinkType;
@@ -18,15 +18,13 @@ import io.wcm.handler.link.type.InternalLinkType;
 import io.wcm.handler.link.type.MediaLinkType;
 import io.wcm.wcm.commons.util.Template;
 
-import io.wcm.devops.conga.definitions.it.sample.config.AppTemplate;
-
 /**
  * Link handler configuration.
  */
 @Component(service = LinkHandlerConfig.class)
 public class LinkHandlerConfigImpl extends LinkHandlerConfig {
 
-  private static final List<Class<? extends LinkType>> DEFAULT_LINK_TYPES = ImmutableList.<Class<? extends LinkType>>of(
+  private static final List<Class<? extends LinkType>> DEFAULT_LINK_TYPES = List.of(
       InternalLinkType.class,
       InternalCrossContextLinkType.class,
       ExternalLinkType.class,

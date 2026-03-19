@@ -31,9 +31,26 @@
   ```
 * Start local dispatcher in docker with `config-definition/dispatcher-aem65-run-local.sh` script
 * Open website per tenant:
-  * Tenant 1: http://tenant1.aemdef-it-sample-65.localhost:55035/
-  * Tenant 2: http://tenant2.aemdef-it-sample-65.localhost:55035/
-  * Tenant 3 (no mapping): http://tenant3-no-mapping.aemdef-it-sample-65.localhost:55035/
+  * Tenant 1: http://tenant1.aemdef-it-sample-65.localhost:5505/
+  * Tenant 2: http://tenant2.aemdef-it-sample-65.localhost:5505/
+  * Tenant 3 (no mapping): http://tenant3-no-mapping.aemdef-it-sample-65.localhost:5505/
+
+
+### Deploy and run local Dispatcher with AEM 6.6
+
+* Setup AEM 6.5 Author on port 45026, Publish on port 45036
+* Deploy application locally with `build-deploy-author-and-publish_aem66.sh`
+* Add local hosts:
+  ```
+  127.0.0.1 tenant1.aemdef-it-sample-66.localhost
+  127.0.0.1 tenant2.aemdef-it-sample-66.localhost
+  127.0.0.1 tenant3-no-mapping.aemdef-it-sample-65.localhost
+  ```
+* Start local dispatcher in docker with `config-definition/dispatcher-aem66-run-local.sh` script
+* Open website per tenant:
+  * Tenant 1: http://tenant1.aemdef-it-sample-66.localhost:5506/
+  * Tenant 2: http://tenant2.aemdef-it-sample-66.localhost:5506/
+  * Tenant 3 (no mapping): http://tenant3-no-mapping.aemdef-it-sample-66.localhost:5506/
 
 
 ---
