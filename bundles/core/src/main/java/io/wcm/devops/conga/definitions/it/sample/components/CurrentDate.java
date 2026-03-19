@@ -21,6 +21,7 @@ public class CurrentDate {
   }
 
   /**
+   * Current year
    * @return Current year
    */
   public int getYear() {

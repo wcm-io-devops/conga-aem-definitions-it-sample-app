@@ -1,10 +1,12 @@
 package io.wcm.devops.conga.definitions.it.sample.components;
 
+import static io.wcm.devops.conga.definitions.it.sample.components.CustomCarousel.NN_SLIDES;
 import static io.wcm.handler.media.MediaNameConstants.PN_MEDIA_REF_STANDARD;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 import org.apache.sling.api.resource.Resource;
@@ -13,15 +15,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import com.day.cq.wcm.api.Page;
-import com.google.common.collect.ImmutableList;
 
+import io.wcm.devops.conga.definitions.it.sample.testcontext.AppAemContext;
 import io.wcm.handler.media.Media;
 import io.wcm.sling.commons.adapter.AdaptTo;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
-
-import static io.wcm.devops.conga.definitions.it.sample.components.CustomCarousel.NN_SLIDES;
-import io.wcm.devops.conga.definitions.it.sample.testcontext.AppAemContext;
 
 @ExtendWith(AemContextExtension.class)
 class CustomCarouselTest {
@@ -55,7 +54,7 @@ class CustomCarouselTest {
         .resource("item2", PN_MEDIA_REF_STANDARD, "/content/dam/slides/slide2.png");
 
     CustomCarousel underTest = AdaptTo.notNull(context.request(), CustomCarousel.class);
-    assertEquals(ImmutableList.of(
+    assertEquals(List.of(
         "/content/dam/slides/slide1.png/_jcr_content/renditions/original./slide1.png",
         "/content/dam/slides/slide2.png/_jcr_content/renditions/original./slide2.png"),
         underTest.getSlideImages().stream()
