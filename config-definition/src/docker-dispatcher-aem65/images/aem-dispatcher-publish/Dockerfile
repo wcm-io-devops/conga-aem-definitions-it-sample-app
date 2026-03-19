@@ -1,10 +1,10 @@
 FROM httpd:2.4
 
-ENV DISPATCHER_VERSION 4.3.4
+ENV DISPATCHER_VERSION 4.3.8
 ENV APACHE_LOG_DIR logs
 
-# Also listen to port 55035
-RUN echo 'Listen 55035' >> "${HTTPD_PREFIX}/conf/httpd.conf"
+# Also listen to port 5505
+RUN echo 'Listen 5505' >> "${HTTPD_PREFIX}/conf/httpd.conf"
 
 # Download and unpack dispatcher
 RUN mkdir -p /tmp/dispatcher

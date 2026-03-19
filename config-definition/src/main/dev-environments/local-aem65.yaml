@@ -64,7 +64,7 @@ tenants:
     app.rootPath: /content/aemdef-it-sample/tenant1
     httpd:
       serverName: tenant1.aemdef-it-sample-65.localhost
-      serverPort: 55035
+      serverPort: 5505
       rootRedirect.url: /en.html
     sling.mapping.rootPath: ${app.rootPath}
 - tenant: tenant2
@@ -72,7 +72,7 @@ tenants:
     app.rootPath: /content/aemdef-it-sample/tenant2
     httpd:
       serverName: tenant2.aemdef-it-sample-65.localhost
-      serverPort: 55035
+      serverPort: 5505
       rootRedirect.url: /en.html
     sling.mapping.rootPath: ${app.rootPath}
 - tenant: tenant3-no-mapping
@@ -80,5 +80,5 @@ tenants:
     app.rootPath: /content/aemdef-it-sample/tenant3-no-mapping
     httpd:
       serverName: tenant3-no-mapping.aemdef-it-sample-65.localhost
-      serverPort: 55035
+      serverPort: 5505
       rootRedirect.url: ${app.rootPath}/en.html

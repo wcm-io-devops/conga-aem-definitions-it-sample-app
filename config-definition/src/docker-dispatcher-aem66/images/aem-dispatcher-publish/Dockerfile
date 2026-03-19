@@ -3,8 +3,8 @@ FROM httpd:2.4
 ENV DISPATCHER_VERSION 4.3.8
 ENV APACHE_LOG_DIR logs
 
-# Also listen to port 55036
-RUN echo 'Listen 55036' >> "${HTTPD_PREFIX}/conf/httpd.conf"
+# Also listen to port 5506
+RUN echo 'Listen 5506' >> "${HTTPD_PREFIX}/conf/httpd.conf"
 
 # Download and unpack dispatcher
 RUN mkdir -p /tmp/dispatcher

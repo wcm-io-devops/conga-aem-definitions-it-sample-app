@@ -1,7 +1,6 @@
-version: '2'
 services:
   aem-dispatcher-publish:
     build: images/aem-dispatcher-publish
     container_name: aem-dispatcher-publish
     ports:
-      - "55036:55036"
+      - "5506:5506"
