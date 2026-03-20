@@ -248,6 +248,20 @@
       </properties>
     </profile>
 
+    <!-- Skip AEM Analyser when building for AEM 6.x  -->
+    <profile>
+      <id>aem65</id>
+      <properties>
+        <aem.analyser.skip>true</aem.analyser.skip>
+      </properties>
+    </profile>
+    <profile>
+      <id>aem66</id>
+      <properties>
+        <aem.analyser.skip>true</aem.analyser.skip>
+      </properties>
+    </profile>
+
   </profiles>
 
 </project>
