@@ -54,14 +54,18 @@ tenants:
   config:
     app.rootPath: /content/aemdef-it-sample/tenant1
     httpd:
-      serverName: tenant1.aemdef-it-sample.dev
-      # default tenant for deploying to cloud sandbox
-      serverAliasNames:
-      - "*"
-      #cloudManagerConditional:
-      #  dev.serverName: dev.tenant1.aemdef-it-sample.dev
-      #  stage.serverName: stage.tenant1.aemdef-it-sample.dev
-      #  prod.serverName: prod.tenant1.aemdef-it-sample.dev
+      cloudManagerConditional:
+          dev:
+            serverName: tenant1.aemdef-it-sample.dev
+            serverAliasNames:
+            # default tenant for deploying to cloud sandbox
+            - "*"
+            - tenant1.aemdef-it-sample.test
+            - tenant1.aemdef-it-sample.rde
+          stage:
+            serverName: tenant1.aemdef-it-sample.stage
+          prod:
+            serverName: tenant1.aemdef-it-sample.prod
       rootRedirect.url: /en.html
     sling.mapping.rootPath: ${app.rootPath}
 - tenant: tenant2
